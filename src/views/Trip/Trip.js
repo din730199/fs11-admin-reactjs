@@ -102,7 +102,7 @@ export default class Trip extends Component {
                       })}
                     </tbody>
                   </table>
-                  <DeleteModal id={modalData._id} />
+                  <DeleteModal id={modalData?._id} />
                   <AddModal />
                 </div>
               </div>

@@ -20,7 +20,7 @@ export default function AddModal() {
       data: {
         departurePlace,
         arrivalPlace,
-        startedDate: new Date(startedDate).toISOString().slice(0, 10),
+        startedDate: F_ERG(startedDate),
         departureTime: new Date(startedDate).toISOString(),
         carId,
         price,
@@ -35,6 +35,25 @@ export default function AddModal() {
       alert('Thành công');
       window.location.reload();
     }
+  };
+
+  const F_ERG = (date) => {
+    let today = new Date(date);
+
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    return today;
   };
 
   useEffect(() => {
